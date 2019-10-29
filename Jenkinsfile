@@ -25,8 +25,8 @@ pipeline {
                   goals: 'clean install',
                   opts: '-DskipTests',
                   buildName: "${env.JOB_NAME}",
-                  buildNumber: "${env.BUILD_NUMBER}",
-                  buildUrl: "${env.BUILD_URL}",
+                  buildNumber: "${env.BUILD_NUMBER} - ${env.STAGE_NAME}",
+                  
                )
            }
        }
