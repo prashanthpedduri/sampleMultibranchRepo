@@ -22,6 +22,7 @@ pipeline {
                   // Tool name from Jenkins configuration.
                   tool: 'Maven',
                   pom: 'pom.xml',
+                  properties: 'stage-name=build',
                   goals: 'clean install',
                   opts: '-DskipTests',
                )
