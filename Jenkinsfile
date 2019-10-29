@@ -33,7 +33,7 @@ pipeline {
                props: 'p1=v1;p2=v2',     
                spec: '''{
                  "files": [{
-                     "pattern": "libs-snapshot-local/sndevops/*/*.jar",
+                     "pattern": "libs-snapshot-local/com/sndevops/eng/devops-java-project/1.0-SNAPSHOT/*.jar",
                      "props": "buildNumber=${env.BUILD_NUMBER} - ${env.STAGE_NAME}"
                  }]}'''
               )
