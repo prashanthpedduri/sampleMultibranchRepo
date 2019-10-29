@@ -26,8 +26,11 @@ pipeline {
                   opts: '-DskipTests',
                   buildName: "${env.JOB_NAME}",
                   buildNumber: "${env.BUILD_NUMBER} - ${env.STAGE_NAME}",
-                  
                )
+              
+              rtPublishBuildInfo (
+                 serverId: 'my-local-artifactory',
+              )
            }
        }
        
