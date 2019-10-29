@@ -8,7 +8,7 @@ pipeline {
            steps {
               //snDevOpsStep()
                 echo "Building" 
-                sh 'mvn clean install -DskipTests'
+             //   sh 'mvn clean install -DskipTests'
               
                rtMavenDeployer (
                     id: "MAVEN_DEPLOYER",
@@ -21,7 +21,7 @@ pipeline {
                   deployerId: 'MAVEN_DEPLOYER',
                   // Tool name from Jenkins configuration.
                   tool: maven,
-                  pom: 'maven-example/pom.xml',
+                  pom: 'pom.xml',
                   goals: 'clean install',
                   opts: '-DskipTests',
                )
