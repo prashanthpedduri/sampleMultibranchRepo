@@ -9,7 +9,15 @@ pipeline {
               //snDevOpsStep()
                 echo "Building" 
                 sh 'mvn clean install -DskipTests'
-     
+              
+               rtMavenRun (
+                  serverId: 'my-local-artifactory',
+                  // Tool name from Jenkins configuration.
+                  tool: maven,
+                  pom: 'maven-example/pom.xml',
+                  goals: 'clean install',
+                  opts: '-DskipTests',
+               )
            }
        }
        
