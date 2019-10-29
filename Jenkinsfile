@@ -6,10 +6,10 @@ pipeline {
    stages {
        stage("build") {
            steps {
-              snDevOpsStep()
-               echo "Building" 
+              //snDevOpsStep()
+                echo "Building" 
                 sh 'mvn clean install -DskipTests'
-               //sleep 5
+     
            }
        }
        
@@ -17,14 +17,14 @@ pipeline {
            stages {
             stage('UAT unit test1') {
                 steps {
-                        snDevOpsStep ()
+                        //snDevOpsStep ()
                         echo "Testing"
                         sh 'mvn -Dtest=com.sndevops.eng.AppTest test'
                 }                       
             }
             stage('UAT unit test 2') {
                  steps {
-                         snDevOpsStep ()
+                         //snDevOpsStep ()
                         echo "Testing"
                         sh 'mvn -Dtest=com.sndevops.eng.App1Test test'                     
                 }
@@ -40,7 +40,7 @@ pipeline {
            
       stage("test-1") {
                 steps {
-                        snDevOpsStep ()
+                        //snDevOpsStep ()
                         echo "Testing"
                        // sh 'mvn -Dtest=com.sndevops.eng.AppTest test'
                 }                    
@@ -53,7 +53,7 @@ pipeline {
                    branch 'dev'
                 }
                steps{
-                 snDevOpsStep ()
+                 //snDevOpsStep ()
                  echo "deploy in UAT"
                }
              }
@@ -62,9 +62,9 @@ pipeline {
                   branch 'master'
                }
                 steps{
-                  snDevOpsStep ()
+                  //snDevOpsStep ()
                    echo "deploy in prod"
-                  snDevOpsChange()              
+                  //snDevOpsChange()              
                 }
             }
         }
