@@ -25,16 +25,16 @@ pipeline {
                   goals: 'clean install',
                   opts: '-DskipTests',
                   buildName: "${env.JOB_NAME}",
-                  buildNumber: "${env.BUILD_NUMBER} - ${env.STAGE_NAME}",
+                  buildNumber: "${env.BUILD_NUMBER}",
                )
               
               rtSetProps (
                serverId: 'my-local-artifactory',
-               props: 'p1=v1;p2=v2',     
+               props: "stageName=${env.STAGE_NAME}",     
                spec: '''{
                  "files": [{
                      "pattern": "libs-snapshot-local/com/sndevops/eng/devops-java-project/1.0-SNAPSHOT/*.jar",
-                     "props": "buildNumber=${env.BUILD_NUMBER} - ${env.STAGE_NAME}"
+                     "props": "buildNumber=${env.BUILD_NUMBER}"
                  }]}'''
               )
               
