@@ -20,7 +20,7 @@ pipeline {
                rtMavenRun (
                   deployerId: 'MAVEN_DEPLOYER',
                   // Tool name from Jenkins configuration.
-                  tool: maven,
+                  tool: 'Maven',
                   pom: 'pom.xml',
                   goals: 'clean install',
                   opts: '-DskipTests',
