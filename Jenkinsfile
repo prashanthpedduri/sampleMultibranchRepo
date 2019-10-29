@@ -24,8 +24,9 @@ pipeline {
                   pom: 'pom.xml',
                   goals: 'clean install',
                   opts: '-DskipTests',
-                  buildName: "${env.BUILD_NAME}",
+                  buildName: "${env.JOB_NAME}",
                   buildNumber: "${env.BUILD_NUMBER}",
+                  buildUrl: "${env.BUILD_URL}",
                )
            }
        }
