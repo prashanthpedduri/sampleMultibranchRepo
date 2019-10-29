@@ -10,8 +10,15 @@ pipeline {
                 echo "Building" 
                 sh 'mvn clean install -DskipTests'
               
+               rtMavenDeployer (
+                    id: "MAVEN_DEPLOYER",
+                    serverId: "my-local-artifactory",
+                    releaseRepo: "libs-release-local",
+                    snapshotRepo: "libs-snapshot-local"
+               )
+              
                rtMavenRun (
-                  serverId: 'my-local-artifactory',
+                  deployerId: 'MAVEN_DEPLOYER',
                   // Tool name from Jenkins configuration.
                   tool: maven,
                   pom: 'maven-example/pom.xml',
