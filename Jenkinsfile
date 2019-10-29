@@ -46,15 +46,15 @@ pipeline {
       
       }
            
-      stage("test-1") {
+      /*stage("test-1") {
                 steps {
                         //snDevOpsStep ()
                         echo "Testing"
                        // sh 'mvn -Dtest=com.sndevops.eng.AppTest test'
                 }                    
-        }
+        }*/
 
-       stage("deploy") {
+       /*stage("deploy") {
          stages{
              stage('deploy UAT') {
                 when{
@@ -76,7 +76,7 @@ pipeline {
                 }
             }
         }
-      }
+      }*/
      
     }
      
